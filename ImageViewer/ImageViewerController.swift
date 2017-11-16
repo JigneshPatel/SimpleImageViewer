@@ -32,6 +32,7 @@ public final class ImageViewerController: UIViewController {
     super.viewDidLoad()
     imageView.image = configuration?.imageView?.image ?? configuration?.image
     deleteButton.setImage(configuration?.deleteImage, for: .normal)
+    deleteButton.tintColor = configuration?.deleteTintColor ?? .white
     deleteLabel.attributedText = NSAttributedString(string: configuration?.deleteText ?? "", attributes: configuration?.deleteAttributes ?? [:])
     setupScrollView()
     setupGestureRecognizers()

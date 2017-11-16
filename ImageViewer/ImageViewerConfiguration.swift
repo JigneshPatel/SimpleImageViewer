@@ -9,6 +9,7 @@ public final class ImageViewerConfiguration {
   public var imageView: UIImageView?
   public var imageBlock: ImageBlock?
   public var deleteImage: UIImage?
+  public var deleteTintColor: UIColor?
   public var deleteText: String?
   public var deleteAttributes: [NSAttributedStringKey: Any]?
   public var deleteHandler: (() -> Void)?
