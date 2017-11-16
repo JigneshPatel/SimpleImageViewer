@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageViewerController" customModule="SimpleImageViewer" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="oPl-2f-Knx" id="GOD-eG-o96"/>
+                <outlet property="deleteButton" destination="xeY-af-ozY" id="zAi-g3-rPX"/>
+                <outlet property="deleteLabel" destination="SB8-qU-S6x" id="ATf-AA-j1y"/>
                 <outlet property="imageView" destination="rHA-5m-kkS" id="V86-k1-pPH"/>
                 <outlet property="scrollView" destination="cQD-2Q-pvo" id="M6k-QU-OVY"/>
                 <outlet property="view" destination="iN0-l3-epB" id="bEt-1B-b5l"/>
@@ -56,14 +58,46 @@
                         <action selector="closeButtonPressed" destination="-1" eventType="touchUpInside" id="jwg-86-OJF"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kk9-ng-Ume">
+                    <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xeY-af-ozY">
+                            <rect key="frame" x="165" y="18" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="bBE-EU-bG1"/>
+                                <constraint firstAttribute="height" constant="44" id="nbD-Ti-mj4"/>
+                            </constraints>
+                            <connections>
+                                <action selector="deleteAction" destination="-1" eventType="touchUpInside" id="0Xh-RP-xjw"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SB8-qU-S6x">
+                            <rect key="frame" x="167" y="51" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="SB8-qU-S6x" secondAttribute="bottom" constant="8" id="3WV-3U-i65"/>
+                        <constraint firstAttribute="height" constant="80" id="8QQ-oq-VLf"/>
+                        <constraint firstItem="xeY-af-ozY" firstAttribute="centerX" secondItem="Kk9-ng-Ume" secondAttribute="centerX" id="aiB-Ql-gN1"/>
+                        <constraint firstItem="SB8-qU-S6x" firstAttribute="centerX" secondItem="Kk9-ng-Ume" secondAttribute="centerX" id="ejb-5Q-QBO"/>
+                        <constraint firstItem="xeY-af-ozY" firstAttribute="centerY" secondItem="Kk9-ng-Ume" secondAttribute="centerY" id="yAc-rX-Nc1"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="oPl-2f-Knx" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="4hr-Ua-OMa"/>
+                <constraint firstAttribute="trailing" secondItem="Kk9-ng-Ume" secondAttribute="trailing" id="6Eo-YN-zg2"/>
+                <constraint firstItem="Kk9-ng-Ume" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Aep-mk-XNu"/>
                 <constraint firstItem="cQD-2Q-pvo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ErM-q5-uey"/>
                 <constraint firstItem="Wsy-fe-raz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GNz-6j-kdf"/>
                 <constraint firstItem="rHA-5m-kkS" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="Zh5-4A-UbJ"/>
                 <constraint firstAttribute="trailing" secondItem="cQD-2Q-pvo" secondAttribute="trailing" id="fiR-iH-AGe"/>
+                <constraint firstAttribute="bottom" secondItem="Kk9-ng-Ume" secondAttribute="bottom" id="fiZ-5b-DU3"/>
                 <constraint firstAttribute="bottom" secondItem="cQD-2Q-pvo" secondAttribute="bottom" id="kQk-Ie-iGl"/>
                 <constraint firstItem="oPl-2f-Knx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="lBh-77-nAV"/>
                 <constraint firstItem="cQD-2Q-pvo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lTy-Fb-3fn"/>
